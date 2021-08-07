@@ -1,0 +1,133 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Lab4_2
+{
+
+    //class Rectangle
+    //{
+    //    public int _Width;
+    //    public int _Length;
+
+    //    List<Rectangle> CalcRec = new List<Rectangle>();
+    //    Rectangle r1 = new Rectangle();
+
+
+      
+
+    //}
+        
+    class MenuItem
+    {
+
+        //In this program Private fields start with  "_", renamed fields do not 
+
+        //Create a class called MenuItem, Include fields: ID, Name, Descrip and Price. Make the fields provate. 
+        private int _ID;
+        private string _Name;
+        private string _Description;
+        private double _Price;
+
+        //write a getter and setter method for each field. Make these fmethods public.
+
+
+        //getand set ID
+        public int getID()
+        {
+            return _ID;
+        }
+        public void SetID(int ID)
+        {
+           _ID = ID; 
+        }
+
+        //get and set Name
+
+        public string GetName()
+        {
+            return _Name;
+        }
+        public void SetName(string Name)
+        {
+            if (!string.IsNullOrEmpty(_Name))
+               _Name = Name;
+
+        }
+
+
+        //get and set Description
+        public string GetDescription()
+        {
+            return _Description;
+        }
+        public void SetDescription(string Description)
+        {
+            if (!string.IsNullOrEmpty(_Description))
+                _Description = Description;
+
+        }
+
+
+
+
+        //get and set Price
+
+        public double GetPrice()
+        {
+            return _Price;
+        }
+
+        public void SetPrice(double Price)
+        {
+            if (_Price < 0.50)
+            {
+                _Price = 0.50;
+            }
+
+            if(_Price > 10.00)
+            {
+               _Price = 10.00;
+            }
+
+            _Price = Price;
+        }
+
+
+
+        //Constructor
+
+        public MenuItem(int ID, string Name, string Description, double Price)
+        {
+            SetID(ID);
+            SetName(Name);
+            SetDescription(Description);
+            SetPrice(Price);
+        }
+
+
+
+         public MenuItem(int ID, string Name, double Price)
+        {
+            SetID(ID);
+            SetName(Name);
+            SetPrice(Price);
+            SetDescription("EMPTY");
+        }
+
+        public override string ToString()
+        {
+            return $"{_ID} {_Name} {_Price} {_Description}";
+        }
+    }
+
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
