@@ -26,7 +26,7 @@ namespace Lab4_2
         private int _ID;
         private string _Name;
         private string _Description;
-        private double _Price;
+        private decimal _Price;
 
         //write a getter and setter method for each field. Make these fmethods public.
 
@@ -72,21 +72,21 @@ namespace Lab4_2
 
         //get and set Price
 
-        public double GetPrice()
+        public decimal GetPrice()
         {
             return _Price;
         }
 
-        public void SetPrice(double Price)
+        public void SetPrice(decimal Price)
         {
-            if (_Price < 0.50)
+            if (_Price < 0.50m)
             {
-                _Price = 0.50;
+                _Price = 0.50m;
             }
 
-            if(_Price > 10.00)
+            if(_Price > 10.00m)
             {
-               _Price = 10.00;
+               _Price = 10.00m;
             }
 
             _Price = Price;
@@ -96,7 +96,7 @@ namespace Lab4_2
 
         //Constructor
 
-        public MenuItem(int ID, string Name, string Description, double Price)
+        public MenuItem(int ID, string Name, string Description, decimal Price)
         {
             SetID(ID);
             SetName(Name);
@@ -106,7 +106,7 @@ namespace Lab4_2
 
 
 
-         public MenuItem(int ID, string Name, double Price)
+         public MenuItem(int ID, string Name, decimal Price)
         {
             SetID(ID);
             SetName(Name);
